@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * PM4Life
+ *
+ * @category  Leisure & Lifestyle
+ * @package   PM4Life_CmsInstaller
+ * @author    Aleksa Zivkovic <aleksa.zivkovic.mga@gmail.com>
+ * @license   https://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link      https://github.com/pm4life/
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <settings>
+        <buttons>
+            <button name="export_template" class="PM4Life\CmsInstaller\Block\Adminhtml\Cms\Button\ExportTemplate" />
+        </buttons>
+    </settings>
+</form>

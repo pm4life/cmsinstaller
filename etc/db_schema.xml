@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PM4Life
+ *
+ * @category  Leisure & Lifestyle
+ * @package   PM4Life_CmsInstaller
+ * @author    Aleksa Zivkovic <aleksa.zivkovic.mga@gmail.com>
+ * @license   https://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link      https://github.com/pm4life/
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="cms_installer" resource="default" engine="innodb" comment="Cms Installer">
+        <column xsi:type="int" name="version_id" identity="true" nullable="false" comment="Cms Installer Version Id"/>
+        <column xsi:type="varchar" name="origin_module" nullable="false" comment="Origin Module"/>
+        <column xsi:type="varchar" name="template_type" length="50" nullable="false" comment="Cms Data Type"/>
+        <column xsi:type="varchar" name="identifier" length="255" nullable="false" comment="Cms Identifier" />
+        <column xsi:type="varchar" name="version_hash" length="32" nullable="false" comment="Cms Data Content Version Hash" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+        <constraint xsi:type="unique" referenceId="CMS_INSTALLER_ORIGIN_MODULE_TYPE_IDENTIFIER">
+            <column name="origin_module"/>
+            <column name="template_type"/>
+            <column name="identifier"/>
+        </constraint>
+    </table>
+</schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PM4Life
+ *
+ * @category  Leisure & Lifestyle
+ * @package   PM4Life_CmsInstaller
+ * @author    Aleksa Zivkovic <aleksa.zivkovic.mga@gmail.com>
+ * @license   https://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link      https://github.com/pm4life/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="cms">
+            <group id="installer" translate="label" type="text" sortOrder="2022" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cms Content Installer</label>
+                <field id="is_enabled" type="select" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip><![CDATA[Please follow user guide in order to understand how best to utilise this module, thanks!]]></tooltip>
+                </field>
+                <field id="base" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Install Template Base</label>
+                    <source_model>PM4Life\CmsInstaller\Model\Config\BaseCmsInstallerDirOptions</source_model>
+                    <comment><![CDATA[Determines where install templates will be placed by developers]]></comment>
+                </field>
+                <field id="allowed_modules" type="multiselect" translate="label" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allowed modules</label>
+                    <source_model>PM4Life\CmsInstaller\Model\Config\AllowedModuleOptions</source_model>
+                    <comment><![CDATA[Pick modules that are allowed to be used for placing install templates]]></comment>
+                    <depends>
+                        <field id="base">1</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

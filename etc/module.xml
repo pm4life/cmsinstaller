@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PM4Life
+ *
+ * @category  Leisure & Lifestyle
+ * @package   PM4Life_CmsInstaller
+ * @author    Aleksa Zivkovic <aleksa.zivkovic.mga@gmail.com>
+ * @license   https://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link      https://github.com/pm4life/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="PM4Life_CmsInstaller">
+        <sequence>
+            <module name="Magento_Cms"/>
+            <module name="Magento_PageBuilder"/>
+        </sequence>
+    </module>
+</config>

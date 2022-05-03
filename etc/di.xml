@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PM4Life
+ *
+ * @category  Leisure & Lifestyle
+ * @package   PM4Life_CmsInstaller
+ * @author    Aleksa Zivkovic <aleksa.zivkovic.mga@gmail.com>
+ * @license   https://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link      https://github.com/pm4life/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="PM4Life\CmsInstaller\Api\Data\CmsInstallerInterface" type="PM4Life\CmsInstaller\Model\CmsInstaller"/>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="PM4Life_CmsInstaller::install_cms_content" xsi:type="object">PM4Life\CmsInstaller\Console\Command\InstallCmsContent</item>
+                <item name="PM4Life_CmsInstaller::export_cms_content" xsi:type="object">PM4Life\CmsInstaller\Console\Command\ExportCmsContent</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="PM4Life\CmsInstaller\Sources\Template\TemplateVariables">
+        <arguments>
+            <argument name="cmsTemplateRequiredVariables" xsi:type="array">
+                <!-- identical for block and page but left separate to allow easier extending by third party if needed -->
+                <item name="block" xsi:type="array">
+                    <item name="0" xsi:type="const">PM4Life\CmsInstaller\Sources\Template\VariablesInterface::TEMPLATE_TYPE</item>
+                    <item name="1" xsi:type="const">PM4Life\CmsInstaller\Sources\Template\VariablesInterface::TITLE</item>
+                    <item name="2" xsi:type="const">PM4Life\CmsInstaller\Sources\Template\VariablesInterface::STORES</item>
+                </item>
+                <item name="page" xsi:type="array">
+                    <item name="0" xsi:type="const">PM4Life\CmsInstaller\Sources\Template\VariablesInterface::TEMPLATE_TYPE</item>
+                    <item name="1" xsi:type="const">PM4Life\CmsInstaller\Sources\Template\VariablesInterface::TITLE</item>
+                    <item name="2" xsi:type="const">PM4Life\CmsInstaller\Sources\Template\VariablesInterface::STORES</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

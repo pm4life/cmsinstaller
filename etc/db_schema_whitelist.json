@@ -1,0 +1,15 @@
+{
+    "cms_installer": {
+        "column": {
+            "version_id": true,
+            "origin_module": true,
+            "template_type": true,
+            "identifier": true,
+            "version_hash": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "CMS_INSTALLER_ORIGIN_MODULE_TEMPLATE_TYPE_IDENTIFIER": true
+        }
+    }
+}
