@@ -1,26 +1,25 @@
 {
-  "name": "pm4life/cmsinstaller",
-  "description": "Magento 2 utility module for migrating/managing cms pages and block data from local environment to remote",
-  "type": "magento2-module",
-  "require": {
-    "php": ">=7.4"
-  },
-  "authors": [
-      {
-          "name": "Aleksa Živković",
-          "email": "aleksa.zivkovic.mga@gmail.com",
-          "role": "Developer"
-      }
-  ],
-  "license": [
-    "MIT"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
-    ],
-    "psr-4": {
-      "PM4Life\\CmsInstaller\\": ""
-    }
-  }
+   "name": "pm4life/cmsinstaller",
+   "description": "Magento 2 utility module for migrating/managing cms pages and block data from local environment to remote",
+   "type": "magento2-module",
+   "require": {
+     "php": ">=7.4"
+   },
+   "authors": [
+       {
+           "name": "Aleksa Živković",
+           "email": "aleksa.zivkovic.mga@gmail.com"
+       }
+   ],
+   "license": [
+     "MIT"
+   ],
+   "autoload": {
+     "files": [
+       "registration.php"
+     ],
+     "psr-4": {
+       "PM4Life\\CmsInstaller\\": ""
+     }
+   }
 }

@@ -5,6 +5,7 @@
 Usually when developing new or maintaining project there is a need for managing cms content.
 This extension provides an option to export cms content to a `.html` which can be added to project repository
 and moved easily from local to development or production environment.
+At least that's the general idea, could be totally wrong here, who knows, who cares.
 
 ## Installation:
 Download package from git or install it via composer with:

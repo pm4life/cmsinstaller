@@ -15,7 +15,7 @@
         <cms>
             <installer>
                 <is_enabled>0</is_enabled>
-                <base>1</base>
+                <base>0</base>
             </installer>
         </cms>
     </default>
