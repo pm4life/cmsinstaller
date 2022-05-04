@@ -16,17 +16,22 @@ namespace PM4Life\CmsInstaller\Block\Adminhtml\Cms\Button;
 use Magento\Backend\Block\Context;
 use Magento\Framework\App\State;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
+use PM4Life\CmsInstaller\Helper\Config as ConfigHelper;
 
 class ExportTemplate implements ButtonProviderInterface
 {
+    private ConfigHelper $configHelper;
+
     private Context $context;
 
     private State $appState;
 
     public function __construct(
+        ConfigHelper $configHelper,
         Context $context,
         State $appState
     ) {
+        $this->configHelper = $configHelper;
         $this->context = $context;
         $this->appState = $appState;
     }
@@ -36,24 +41,26 @@ class ExportTemplate implements ButtonProviderInterface
      */
     public function getButtonData(): array
     {
-        if (in_array($this->appState->getMode(), [State::MODE_DEVELOPER, State::MODE_DEFAULT])) {
-            [$entityId, $type] = $this->context->getRequest()->getParam('page_id')
-                ? [$this->context->getRequest()->getParam('page_id'), 'page']
-                : [$this->context->getRequest()->getParam('block_id'), 'block'];
+        if ($this->configHelper->isEnabled()) {
+            if (in_array($this->appState->getMode(), [State::MODE_DEVELOPER, State::MODE_DEFAULT])) {
+                [$entityId, $type] = $this->context->getRequest()->getParam('page_id')
+                    ? [$this->context->getRequest()->getParam('page_id'), 'page']
+                    : [$this->context->getRequest()->getParam('block_id'), 'block'];
 
-            if (!empty($entityId)) {
-                return [
-                    'label' => __('Export Template'),
-                    'class' => 'secondary',
-                    'on_click' => sprintf(
-                        "location.href = '%s';",
-                        $this->context->getUrlBuilder()->getUrl(
-                            'cms/template/export',
-                            ['type' => $type, 'id' => $entityId]
-                        )
-                    ),
-                    'sort_order' => 7,
-                ];
+                if (!empty($entityId)) {
+                    return [
+                        'label' => __('Export Template'),
+                        'class' => 'secondary',
+                        'on_click' => sprintf(
+                            "location.href = '%s';",
+                            $this->context->getUrlBuilder()->getUrl(
+                                'cms/template/export',
+                                ['type' => $type, 'id' => $entityId]
+                            )
+                        ),
+                        'sort_order' => 7,
+                    ];
+                }
             }
         }
         return [];
