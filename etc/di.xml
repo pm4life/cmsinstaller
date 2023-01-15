@@ -17,6 +17,7 @@
             <argument name="commands" xsi:type="array">
                 <item name="PM4Life_CmsInstaller::install_cms_content" xsi:type="object">PM4Life\CmsInstaller\Console\Command\InstallCmsContent</item>
                 <item name="PM4Life_CmsInstaller::export_cms_content" xsi:type="object">PM4Life\CmsInstaller\Console\Command\ExportCmsContent</item>
+                <item name="PM4Life_CmsInstaller::rebuild_cms_page_url_rewrites" xsi:type="object">PM4Life\CmsInstaller\Console\Command\RegenerateCmsPageUrls</item>
             </argument>
         </arguments>
     </type>

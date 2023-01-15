@@ -56,3 +56,11 @@ php bin/magento cms:installer:apply
 ```
 
 Changes to template files are tracked, so if you add changes to template file and run `cms:installer:apply` command, that will result in given block or page being updated with those changes.
+
+### Additional features
+
+You can also use this console command to run regeneration of all **active** cms page url rewrites
+Please take into account any customizations that you have on your store as this is not something that should be done on a regular basis.  
+```
+php bin/magento cms:installer:rebuild-url-rewrites
+```
